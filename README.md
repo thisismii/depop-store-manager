@@ -15,6 +15,8 @@ Your shop identity and API keys live in `.env` (or Cursor environment secrets) â
 
 Live Depop Sync still needs your laptop + Chrome extension. Cloud work = code, tests, docs, UI against fixtures.
 
+Cloud smoke test OK.
+
 ## Preview (mockups)
 
 Static HTML with **fake sample listings** (no live shop data):
