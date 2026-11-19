@@ -15,6 +15,7 @@ Shop identity comes from env (`DEPOP_SHOP_ID`, `DEPOP_SHOP_USERNAME`) — never 
 | [`README.md`](README.md) | Setup for sellers and contributors |
 | [`ROADMAP.md`](ROADMAP.md) | Vertical-slice session plan and demo checkpoints |
 | [`BACKLOG.md`](BACKLOG.md) | Ranked work (Must / Should / Later / Never) |
+| [`docs/HANDOFF.md`](docs/HANDOFF.md) | Cloud Project handoff — architecture, local vs cloud, north-star relist+SKU |
 | [`docs/plans/`](docs/plans/) | Active feature plans + Cloud / Human checkpoints |
 
 ## Hard product rules
@@ -63,7 +64,8 @@ Public presentation endpoints were flaky / blocked for Sync.
 - Merge-safe store + Active/Sold status + `item_id` / `first_listed_at`
 - Rewrite description for sales (draft → Copy / Approve local `pending_description`)
 - Refresh helper — stale price-review queue + per-item pack (copy desc/photos/price, open Depop create, paste new URL, then delete old). No silent Depop write.
-- **Next:** Photos-on-Refresh if Sync still only has cover; then listed-for / payout. Optional later: capture Network for true create/delete APIs.
+- **North-star:** exact stale relist + confirmed delete old + keep `item_id` (see [`docs/HANDOFF.md`](docs/HANDOFF.md)).
+- **Next slices:** Photos-on-Refresh → exact pack fidelity → assisted create/delete (still human-gated). Then listed-for / payout.
 
 ## Scale / stale
 

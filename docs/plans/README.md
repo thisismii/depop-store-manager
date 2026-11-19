@@ -36,4 +36,5 @@ Cloud Agents (and humans) keep **one plan file per active feature** here so work
 
 | Plan | Status | Backlog |
 |------|--------|---------|
+| [2026-11-18-exact-relist-sku](2026-11-18-exact-relist-sku.md) | draft | North-star — exact relist + delete + keep `item_id` |
 | [2026-11-18-photos-on-refresh](2026-11-18-photos-on-refresh.md) | draft | Should #3 — photo hell / photos in Refresh |
