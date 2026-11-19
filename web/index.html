@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Depop Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1 class="brand">Depop Manager</h1>
+      <p class="subtitle">Catalog</p>
+      <p id="meta" class="meta">Loading…</p>
+      <div class="header-actions">
+        <a class="export-btn" href="/refresh.html">Refresh stale</a>
+        <a class="export-btn" id="export-sold" href="/api/export/sold.csv" download>Export sold CSV</a>
+        <a class="export-btn" href="/books-review">Books review</a>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Catalog filter">
+        <button type="button" class="tab" role="tab" id="tab-active" aria-selected="true" data-tab="active">Active</button>
+        <button type="button" class="tab" role="tab" id="tab-sold" aria-selected="false" data-tab="sold">Sold</button>
+        <button type="button" class="tab" role="tab" id="tab-stale" aria-selected="false" data-tab="stale">Stale</button>
+      </div>
+    </header>
+    <p id="status" class="status" hidden></p>
+    <ul id="queue" class="queue" aria-live="polite"></ul>
+  </main>
+
+  <dialog id="rewrite-dialog" class="rewrite-dialog">
+    <form method="dialog" class="rewrite-panel">
+      <header class="rewrite-header">
+        <h2>Rewrite description</h2>
+        <p id="rewrite-meta" class="rewrite-meta"></p>
+      </header>
+      <div class="rewrite-cols">
+        <section>
+          <h3>Original</h3>
+          <pre id="rewrite-original" class="rewrite-text"></pre>
+        </section>
+        <section>
+          <h3>Draft</h3>
+          <pre id="rewrite-draft" class="rewrite-text"></pre>
+        </section>
+      </div>
+      <p class="rewrite-note">Approve saves locally only. Copy to paste into Depop. Nothing posts automatically.</p>
+      <div class="rewrite-actions">
+        <button type="button" id="rewrite-copy" disabled>Copy draft</button>
+        <button type="button" id="rewrite-approve" class="primary" disabled>Approve</button>
+        <button type="submit" id="rewrite-close" value="cancel">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>

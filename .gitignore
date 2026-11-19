@@ -1,0 +1,27 @@
+# Live shop data (never commit a real catalog)
+data/
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Local research media
+notes/*.mov
+notes/frames/
+
+# Go
+bin/
+dist/
+*.exe
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~

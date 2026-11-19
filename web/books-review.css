@@ -1,0 +1,158 @@
+.review {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+}
+
+.eyebrow a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.eyebrow a:hover {
+  color: var(--ink);
+}
+
+.review h2 {
+  margin: 2rem 0 0.35rem;
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.hint {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.accept-form {
+  margin: 0 0 1rem;
+}
+
+.accept-form button.primary {
+  font: inherit;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  color: var(--bg, #fff);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.accept-form button.primary:hover {
+  opacity: 0.9;
+}
+
+.card {
+  margin: 0 0 0.85rem;
+  padding: 0.85rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.card p {
+  margin: 0.25rem 0;
+  font-size: 0.88rem;
+}
+
+.tag {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.1rem 0.35rem;
+  margin-right: 0.25rem;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.suspect .tag {
+  background: var(--danger);
+}
+
+.gap .tag {
+  background: var(--accent);
+}
+
+.cands {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.cands li {
+  margin: 0.55rem 0;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.86rem;
+}
+
+.cands li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.depop {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.84rem;
+}
+
+.price-row {
+  margin: 0.35rem 0 !important;
+  font-size: 0.88rem;
+}
+
+.hint-inline {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.price-match {
+  color: var(--ok);
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.price-ok {
+  color: var(--accent);
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.price-bad {
+  color: var(--danger);
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.warn {
+  color: var(--danger);
+  font-size: 0.78rem;
+}
+
+.review code {
+  font-size: 0.84rem;
+  background: #e8ebef;
+  padding: 0.05rem 0.3rem;
+  border-radius: 2px;
+}
+
+.review .empty {
+  color: var(--muted);
+  font-size: 0.88rem;
+}

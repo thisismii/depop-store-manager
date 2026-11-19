@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Depop Store Manager Sync",
+  "version": "0.7.2",
+  "description": "Sync Selling Hub + record one Depop Post (write capture test). No auto-post.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Depop Store Manager Sync"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": [
+    "https://www.depop.com/*",
+    "https://webapi.depop.com/*",
+    "http://127.0.0.1:8787/*"
+  ]
+}

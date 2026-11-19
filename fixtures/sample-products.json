@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 900001,
+      "slug": "sample-linen-blazer-navy-s",
+      "description": "Navy linen blazer, size S. Light wear at cuffs. Smoke-free home.",
+      "created_at": "2025-04-12T15:22:00Z",
+      "price": { "price_amount": "48.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900002,
+      "slug": "sample-floral-midi-skirt-m",
+      "description": "Floral midi skirt, M. Side zip. Worn twice.",
+      "created_at": "2025-05-01T10:05:00Z",
+      "price": { "price_amount": "22.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900003,
+      "slug": "sample-leather-crossbody-tan",
+      "description": "Tan leather crossbody. Adjustable strap. Interior clean.",
+      "created_at": "2025-06-18T18:40:00Z",
+      "price": { "price_amount": "65.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900004,
+      "slug": "sample-striped-tee-xs",
+      "description": "Striped cotton tee, XS. Soft wash. No stains.",
+      "created_at": "2025-12-20T12:00:00Z",
+      "price": { "price_amount": "14.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900005,
+      "slug": "sample-denim-jacket-m",
+      "description": "Classic denim jacket, M. Broken-in. One small mark on back hem.",
+      "created_at": "2026-01-15T09:30:00Z",
+      "price": { "price_amount": "38.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900006,
+      "slug": "sample-wool-coat-camel-s",
+      "description": "Camel wool coat, S. Full lining. Buttons intact.",
+      "created_at": "2025-03-02T08:15:00Z",
+      "price": { "price_amount": "95.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900007,
+      "slug": "sample-silk-camisole-ivory",
+      "description": "Ivory silk camisole. Bias cut. New without tags.",
+      "created_at": "2026-08-28T16:00:00Z",
+      "price": { "price_amount": "28.00", "currency_name": "USD" }
+    },
+    {
+      "id": 900008,
+      "slug": "sample-wide-leg-trousers-6",
+      "description": "Black wide-leg trousers, US 6. High rise. Crease holds.",
+      "created_at": "2025-07-04T14:20:00Z",
+      "price": { "price_amount": "32.00", "currency_name": "USD" }
+    }
+  ]
+}

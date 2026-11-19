@@ -1,0 +1,94 @@
+:root {
+  --ink: #1c1f24;
+  --muted: #6b7280;
+  --accent: #2f5d50;
+  --danger: #a33b3b;
+  --line: #dde1e6;
+  --bg: #f4f5f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 240px;
+  padding: 1rem 1.05rem 1.1rem;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hint {
+  margin: 0.35rem 0 0.9rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.sync {
+  appearance: none;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.sync:hover:not(:disabled) {
+  background: #274e43;
+  border-color: #274e43;
+}
+
+.sync:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.record,
+.record-save {
+  appearance: none;
+  width: 100%;
+  margin-top: 0.4rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.record-save {
+  font-weight: 500;
+  border-color: var(--line);
+}
+
+.status {
+  margin: 0.75rem 0 0;
+  min-height: 1.2em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.status[data-kind="ok"] {
+  color: var(--accent);
+}
+
+.status[data-kind="error"] {
+  color: var(--danger);
+}
