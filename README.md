@@ -6,6 +6,14 @@ Local helper for Depop sellers: sync your active (and sold) listings, spot **sta
 
 Your shop identity and API keys live in `.env` (or Cursor environment secrets) — never in git.
 
+## Preview (mockups)
+
+Static HTML with **fake sample listings** (no live shop data):
+
+- [Mockup index](docs/mockups/index.html) — Stale dashboard, Rewrite modal, Refresh queue
+
+Open the files in a browser after clone (they load `web/styles.css`). Real screenshots can land later under `docs/screenshots/` once Cloud Agents / a demo shop are set up.
+
 ## Who this is for
 
 Any Depop store owner who wants a private dashboard + Chrome extension to:

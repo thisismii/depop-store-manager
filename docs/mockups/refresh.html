@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mockup — Refresh stale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../web/styles.css" />
+  <link rel="stylesheet" href="../../web/refresh.css" />
+  <style>
+    .mock-banner {
+      margin: 0 0 1rem;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px dashed var(--line);
+    }
+    .thumb-ph {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 2px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, #d7dde5, #eef1f4);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .thumb-ph.warm { background: linear-gradient(145deg, #e2d4c4, #f3ebe3); }
+    .thumb-ph.cool { background: linear-gradient(145deg, #c5d0dc, #e8eef4); }
+  </style>
+</head>
+<body>
+  <main class="refresh-page">
+    <p class="mock-banner"><a href="index.html">← Mockups</a> · Sample data only · Create + delete stay confirm-in-browser</p>
+    <header class="page-header">
+      <p class="eyebrow"><a href="dashboard-stale.html">← Dashboard</a></p>
+      <h1 class="brand">Refresh listings</h1>
+      <p class="subtitle">Repost stale items as new listings. Confirm create, then confirm delete. Nothing posts by itself.</p>
+      <p class="meta">@sampleseller · 3 stale · signal cuts are optional (default = keep price)</p>
+    </header>
+
+    <div class="blanket">
+      <label for="blanket-pct">Blanket cut %</label>
+      <input id="blanket-pct" type="text" value="" placeholder="—" disabled />
+      <span class="keep">leave blank to keep each price</span>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Item</th>
+          <th>Age</th>
+          <th>Old</th>
+          <th>Signal</th>
+          <th>New</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="thumb-ph warm" aria-hidden="true"></span></td>
+          <td>Navy linen blazer, S</td>
+          <td>94d</td>
+          <td>$48.00</td>
+          <td class="cut">15% → $40.80</td>
+          <td><input type="text" value="48.00" readonly /></td>
+          <td><a class="export-btn" href="#">Open pack</a></td>
+        </tr>
+        <tr>
+          <td><span class="thumb-ph cool" aria-hidden="true"></span></td>
+          <td>Floral midi skirt, M</td>
+          <td>78d</td>
+          <td>$22.00</td>
+          <td class="cut">15% → $18.70</td>
+          <td><input type="text" value="22.00" readonly /></td>
+          <td><a class="export-btn" href="#">Open pack</a></td>
+        </tr>
+        <tr>
+          <td><span class="thumb-ph" aria-hidden="true"></span></td>
+          <td>Tan leather crossbody</td>
+          <td>61d</td>
+          <td>$65.00</td>
+          <td class="cut">15% → $55.25</td>
+          <td><input type="text" value="65.00" readonly /></td>
+          <td><a class="export-btn" href="#">Open pack</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

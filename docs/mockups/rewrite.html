@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mockup — Rewrite description</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../web/styles.css" />
+  <style>
+    .mock-banner {
+      margin: 0 0 1rem;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px dashed var(--line);
+    }
+    .mock-stage {
+      position: relative;
+      min-height: 70vh;
+    }
+    .mock-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: color-mix(in srgb, var(--ink) 35%, transparent);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .rewrite-panel.mock-open {
+      position: relative;
+      z-index: 1;
+      margin: 1.5rem auto;
+      max-width: 52rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 1.1rem 1.15rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="mock-banner"><a href="index.html">← Mockups</a> · Sample data only · Approve saves locally; nothing posts to Depop</p>
+    <div class="mock-stage">
+      <form class="rewrite-panel mock-open" onsubmit="return false;">
+        <header class="rewrite-header">
+          <h2>Rewrite description</h2>
+          <p class="rewrite-meta">Floral midi skirt · heuristic draft · sample item</p>
+        </header>
+        <div class="rewrite-cols">
+          <section>
+            <h3>Original</h3>
+            <pre class="rewrite-text">Floral midi skirt, M. Side zip. Worn twice.</pre>
+          </section>
+          <section>
+            <h3>Draft</h3>
+            <pre class="rewrite-text">Floral Midi Skirt — Size M
+
+• Brand: unlabeled
+• Size: M
+• Condition: lightly worn, side zip works
+• Notes: soft drape, easy summer piece
+
+#depop #midiskirt #floral #summerstyle</pre>
+          </section>
+        </div>
+        <p class="rewrite-note">Approve saves locally only. Copy to paste into Depop. Nothing posts automatically.</p>
+        <div class="rewrite-actions">
+          <button type="button">Copy draft</button>
+          <button type="button" class="primary">Approve</button>
+          <a class="export-btn" href="dashboard-stale.html">Close</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

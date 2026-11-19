@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI mockups — Depop Store Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../web/styles.css" />
+  <style>
+    .mock-banner {
+      margin: 0 0 1.25rem;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px dashed var(--line);
+      border-radius: 2px;
+    }
+    .mock-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+    }
+    .mock-nav li {
+      border-bottom: 1px solid var(--line);
+    }
+    .mock-nav li:last-child {
+      border-bottom: none;
+    }
+    .mock-nav a {
+      display: block;
+      padding: 1rem 1.05rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .mock-nav a:hover {
+      background: #f7f8fa;
+    }
+    .mock-nav span {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.84rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1 class="brand">UI mockups</h1>
+      <p class="subtitle">Static previews with fake sample listings</p>
+      <p class="meta">Not wired to a live shop. Real screenshots can replace these later.</p>
+    </header>
+    <p class="mock-banner">Open these files in a browser after clone (they load <code>web/styles.css</code>). Safe for README / Cloud Agents — no personal catalog data.</p>
+    <ul class="mock-nav">
+      <li>
+        <a href="dashboard-stale.html">Dashboard — Stale tab
+          <span>Queue of old listings with Rewrite / Refresh actions</span>
+        </a>
+      </li>
+      <li>
+        <a href="rewrite.html">Rewrite description
+          <span>Original vs draft side-by-side; approve stays local</span>
+        </a>
+      </li>
+      <li>
+        <a href="refresh.html">Refresh stale queue
+          <span>Price review table before opening Depop create</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>

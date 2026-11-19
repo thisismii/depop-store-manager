@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mockup — Stale dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../web/styles.css" />
+  <style>
+    .mock-banner {
+      margin: 0 0 1rem;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px dashed var(--line);
+    }
+    .thumb-ph {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 2px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, #d7dde5, #eef1f4);
+    }
+    .thumb-ph.warm { background: linear-gradient(145deg, #e2d4c4, #f3ebe3); }
+    .thumb-ph.cool { background: linear-gradient(145deg, #c5d0dc, #e8eef4); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="mock-banner"><a href="index.html">← Mockups</a> · Sample data only</p>
+    <header class="page-header">
+      <h1 class="brand">Depop Store Manager</h1>
+      <p class="subtitle">Catalog</p>
+      <p class="meta">@sampleseller · synced just now · 6 active · 3 stale (≥60d)</p>
+      <div class="header-actions">
+        <a class="export-btn" href="refresh.html">Refresh stale</a>
+        <span class="export-btn" aria-disabled="true">Export sold CSV</span>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Catalog filter">
+        <button type="button" class="tab" role="tab" aria-selected="false">Active</button>
+        <button type="button" class="tab" role="tab" aria-selected="false">Sold</button>
+        <button type="button" class="tab" role="tab" aria-selected="true">Stale</button>
+      </div>
+    </header>
+    <ul class="queue">
+      <li class="row has-thumb">
+        <div class="thumb-ph warm" aria-hidden="true"></div>
+        <div class="row-body">
+          <div class="row-top">
+            <span class="badge" data-status="active">active</span>
+            <span class="age">94 days</span>
+            <span class="price">$48.00</span>
+          </div>
+          <p class="listed-since">Listed since Apr 12, 2025</p>
+          <p class="desc">Navy linen blazer, size S. Light wear at cuffs. Smoke-free home.</p>
+          <div class="actions">
+            <button type="button">Open</button>
+            <button type="button">Copy desc</button>
+            <button type="button">Rewrite</button>
+            <a class="primary" href="refresh.html">Refresh</a>
+          </div>
+        </div>
+      </li>
+      <li class="row has-thumb">
+        <div class="thumb-ph cool" aria-hidden="true"></div>
+        <div class="row-body">
+          <div class="row-top">
+            <span class="badge" data-status="active">active</span>
+            <span class="badge pending">pending rewrite</span>
+            <span class="age">78 days</span>
+            <span class="price">$22.00</span>
+          </div>
+          <p class="listed-since">Listed since May 1, 2025</p>
+          <p class="desc">Floral midi skirt, M. Side zip. Worn twice.</p>
+          <div class="actions">
+            <button type="button">Open</button>
+            <button type="button">Copy desc</button>
+            <a href="rewrite.html">Rewrite</a>
+            <a class="primary" href="refresh.html">Refresh</a>
+          </div>
+        </div>
+      </li>
+      <li class="row has-thumb">
+        <div class="thumb-ph" aria-hidden="true"></div>
+        <div class="row-body">
+          <div class="row-top">
+            <span class="badge" data-status="active">active</span>
+            <span class="age">61 days</span>
+            <span class="price">$65.00</span>
+          </div>
+          <p class="listed-since">Listed since Jun 18, 2025</p>
+          <p class="desc">Tan leather crossbody. Adjustable strap. Interior clean.</p>
+          <div class="actions">
+            <button type="button">Open</button>
+            <button type="button">Copy desc</button>
+            <button type="button">Rewrite</button>
+            <a class="primary" href="refresh.html">Refresh</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
