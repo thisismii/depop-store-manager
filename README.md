@@ -6,6 +6,15 @@ Local helper for Depop sellers: sync your active (and sold) listings, spot **sta
 
 Your shop identity and API keys live in `.env` (or Cursor environment secrets) — never in git.
 
+## Cloud Agents (phone / away from laptop)
+
+1. Connect GitHub at [Cursor Integrations](https://cursor.com/dashboard/integrations) and grant access to **thisismii/depop-store-manager**.
+2. Open [Cloud Agents](https://cursor.com/dashboard/cloud-agents) → create/setup environment for this repo (guided install is fine; repo ships `.cursor/environment.json`).
+3. Add secrets (same names as `.env.example`): `DEPOP_SHOP_ID`, `DEPOP_SHOP_USERNAME`, optional `OPENAI_API_KEY` as a **Runtime Secret**.
+4. From phone: [cursor.com/agents](https://cursor.com/agents) (or Cursor iOS) → pick this repo → describe the feature → agent opens a PR.
+
+Live Depop Sync still needs your laptop + Chrome extension. Cloud work = code, tests, docs, UI against fixtures.
+
 ## Preview (mockups)
 
 Static HTML with **fake sample listings** (no live shop data):

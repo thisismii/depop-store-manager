@@ -70,3 +70,27 @@ Depop banners **60+ day** listings and offers native **Reprice and relist** (min
 ## Language
 
 Prefer **Go** for server code. Extension is JS (Chrome MV3). Dashboard is static HTML/CSS/JS.
+
+## Cursor Cloud specific instructions
+
+Cloud Agents use `.cursor/environment.json` (`install` installs Go 1.22 and runs `go test ./...`).
+
+**Secrets** (Cursor Dashboard → Cloud Agents → Secrets — never commit):
+
+| Name | Type | Notes |
+|------|------|-------|
+| `DEPOP_SHOP_ID` | Environment Variable | Optional; demo mode if empty |
+| `DEPOP_SHOP_USERNAME` | Environment Variable | Optional; demo mode if empty |
+| `OPENAI_API_KEY` | Runtime Secret | Optional; heuristic rewrite without it |
+
+**Verify after changes:**
+
+```bash
+export PATH=/usr/local/go/bin:$PATH
+go test ./...
+go build -o /dev/null ./cmd/server
+```
+
+**Dashboard / Refresh UI:** `./start` then open `http://127.0.0.1:8787/` (and `/refresh.html`). Catalog lives in gitignored `data/` — Sync from Chrome extension is **local-only**; cloud agents should use fixtures / empty catalog / unit tests, not live Selling Hub.
+
+**Do not:** commit `.env`, `data/`, real listing dumps, or shipping addresses. Prefer PRs from feature branches.
