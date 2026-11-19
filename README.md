@@ -15,6 +15,8 @@ Your shop identity and API keys live in `.env` (or Cursor environment secrets) â
 
 Live Depop Sync still needs your laptop + Chrome extension. Cloud work = code, tests, docs, UI against fixtures.
 
+**Plans / checkpoints:** [`docs/plans/`](docs/plans/) â€” agents leave Cloud-verifiable checks and Human-later (Sync / Depop) so they can pause and self-repair when you cannot test locally.
+
 Cloud smoke test OK.
 
 ## Preview (mockups)
