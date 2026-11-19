@@ -3,7 +3,9 @@
 Living list from shop-owner interviews + build constraints.  
 Agents: do not invent items the owner did not endorse.
 
-**Last updated:** 2026-11-18 (public repo scrub; shop identity via env)
+**Last updated:** 2026-11-18 (plans/checkpoints for Cloud Agents)
+
+Active plan for next Should: [`docs/plans/2026-11-18-photos-on-refresh.md`](docs/plans/2026-11-18-photos-on-refresh.md)
 
 ## How to read
 

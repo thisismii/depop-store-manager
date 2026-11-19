@@ -15,6 +15,7 @@ Shop identity comes from env (`DEPOP_SHOP_ID`, `DEPOP_SHOP_USERNAME`) — never 
 | [`README.md`](README.md) | Setup for sellers and contributors |
 | [`ROADMAP.md`](ROADMAP.md) | Vertical-slice session plan and demo checkpoints |
 | [`BACKLOG.md`](BACKLOG.md) | Ranked work (Must / Should / Later / Never) |
+| [`docs/plans/`](docs/plans/) | Active feature plans + Cloud / Human checkpoints |
 
 ## Hard product rules
 
@@ -22,6 +23,7 @@ Shop identity comes from env (`DEPOP_SHOP_ID`, `DEPOP_SHOP_USERNAME`) — never 
 - **Confirm before write** — delete / create / relist stay human-gated until explicitly changed.
 - **Grill before features** — non-trivial new behavior needs alignment first.
 - **Vertical slices** — each chunk ends in something demoable (input → visible output).
+- **Plans + checkpoints** — non-trivial work gets a `docs/plans/*.md` with Cloud and Human-later checks; agents re-run Cloud checks on follow-up.
 - **No personal shop data in git** — catalog, `.env`, addresses, recordings stay local / secrets.
 
 ## Architecture (current)
@@ -83,7 +85,15 @@ Cloud Agents use `.cursor/environment.json` (`install` installs Go 1.22 and runs
 | `DEPOP_SHOP_USERNAME` | Environment Variable | Optional; demo mode if empty |
 | `OPENAI_API_KEY` | Runtime Secret | Optional; heuristic rewrite without it |
 
-**Verify after changes:**
+### Plans when the owner is away
+
+1. Read [`docs/plans/README.md`](docs/plans/README.md). Open any `in_progress` / `needs_human` plan, or create one from `_TEMPLATE.md` for the next [`BACKLOG.md`](BACKLOG.md) item.
+2. Implement only the plan’s slice. Keep **Cloud** checkpoints executable without a Depop login.
+3. Before PR: run every Cloud checkpoint; on failure, fix in the same run. Update the plan table (pass/fail + notes).
+4. PR body: link the plan; list Cloud results; list **Human-later** still open (`needs_human` is OK).
+5. Follow-up agents: re-run Cloud checkpoints first, then fix or address human notes — do not mark Human-later done yourselves.
+
+**Verify after changes (baseline Cloud checks):**
 
 ```bash
 export PATH=/usr/local/go/bin:$PATH
