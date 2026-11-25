@@ -3,7 +3,7 @@
 - **Status:** needs_human
 - **Backlog ref:** North-star / exact-relist Phase 1 — stale visible from plugin
 - **Owner:** cloud-agent
-- **Branch / PR:** cursor/extension-stale-popup-dd5d
+- **Branch / PR:** cursor/extension-stale-popup-dd5d — https://github.com/thisismii/depop-store-manager/pull/2
 - **Started:** 2026-11-25
 - **Last updated:** 2026-11-25
 
