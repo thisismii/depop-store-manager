@@ -12,7 +12,11 @@ const rewriteApproveBtn = document.getElementById("rewrite-approve");
 const rewriteCloseBtn = document.getElementById("rewrite-close");
 
 let catalog = null;
-let activeTab = "active";
+const initialTab = new URLSearchParams(location.search).get("tab");
+let activeTab =
+  initialTab === "stale" || initialTab === "sold" || initialTab === "active"
+    ? initialTab
+    : "active";
 let rewriteState = null;
 
 function showStatus(message, kind) {
@@ -276,6 +280,10 @@ function setTab(tab) {
 
 tabButtons.forEach((btn) => {
   btn.addEventListener("click", () => setTab(btn.dataset.tab));
+  btn.setAttribute(
+    "aria-selected",
+    btn.dataset.tab === activeTab ? "true" : "false"
+  );
 });
 
 exportSoldEl.addEventListener("click", (e) => {
