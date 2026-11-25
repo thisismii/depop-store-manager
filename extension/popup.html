@@ -10,6 +10,15 @@
   <h1>Depop Manager</h1>
   <p id="version" class="hint">Loading…</p>
   <p class="hint">Sync scrolls Active + Sold. Record Post captures one real create (you still click Post).</p>
+
+  <section class="stale-panel" aria-live="polite">
+    <p id="stale-summary" class="stale-summary">Checking stale…</p>
+    <button type="button" id="open-refresh" class="refresh">Open Refresh</button>
+    <p class="stale-links">
+      <a id="open-stale" href="http://127.0.0.1:8787/?tab=stale">Open Stale tab</a>
+    </p>
+  </section>
+
   <button type="button" id="sync" class="sync">Sync</button>
   <button type="button" id="record" class="record">Record Post</button>
   <button type="button" id="save-record" class="record-save">Save capture</button>

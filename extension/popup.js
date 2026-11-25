@@ -1,8 +1,16 @@
 const syncBtn = document.getElementById("sync");
 const recordBtn = document.getElementById("record");
 const saveRecordBtn = document.getElementById("save-record");
+const openRefreshBtn = document.getElementById("open-refresh");
+const openStaleLink = document.getElementById("open-stale");
+const staleSummaryEl = document.getElementById("stale-summary");
 const statusEl = document.getElementById("status");
 const versionEl = document.getElementById("version");
+
+const LOCAL_ORIGIN = "http://127.0.0.1:8787";
+const REFRESH_API = `${LOCAL_ORIGIN}/api/refresh`;
+const REFRESH_URL = `${LOCAL_ORIGIN}/refresh.html`;
+const STALE_TAB_URL = `${LOCAL_ORIGIN}/?tab=stale`;
 
 function setStatus(message, kind) {
   statusEl.textContent = message || "";
@@ -22,6 +30,68 @@ async function showVersion() {
     versionEl.textContent = `Extension v${man.version} — Record Post is a capture test, not auto-repost`;
   } catch {
     versionEl.textContent = "Extension version unknown";
+  }
+}
+
+async function openLocalUrl(url) {
+  const tabs = await chrome.tabs.query({ url: `${LOCAL_ORIGIN}/*` });
+  if (tabs.length > 0) {
+    const tab = tabs[0];
+    await chrome.tabs.update(tab.id, { active: true, url });
+    if (tab.windowId != null) {
+      await chrome.windows.update(tab.windowId, { focused: true });
+    }
+    return;
+  }
+  await chrome.tabs.create({ url, active: true });
+}
+
+function renderStaleSummary(data) {
+  const count = typeof data?.count === "number" ? data.count : 0;
+  const days = typeof data?.stale_days === "number" ? data.stale_days : 60;
+  if (count === 0) {
+    staleSummaryEl.textContent = `0 stale (≥${days}d) — Sync first if empty`;
+    return;
+  }
+  staleSummaryEl.textContent = `${count} stale (≥${days}d)`;
+}
+
+async function loadStaleSummary() {
+  staleSummaryEl.textContent = "Checking stale…";
+  openRefreshBtn.disabled = true;
+  try {
+    const res = await fetch(REFRESH_API);
+    if (!res.ok) {
+      throw new Error(`${res.status}: ${await res.text()}`);
+    }
+    const data = await res.json();
+    renderStaleSummary(data);
+    openRefreshBtn.disabled = false;
+  } catch (err) {
+    staleSummaryEl.textContent = "Server offline — start ./start on :8787";
+    openRefreshBtn.disabled = false;
+    console.warn("stale summary failed", err);
+  }
+}
+
+async function openRefresh() {
+  openRefreshBtn.disabled = true;
+  try {
+    await openLocalUrl(REFRESH_URL);
+    setStatus("Opened Refresh queue", "ok");
+  } catch (err) {
+    setStatus(shortError(err.message || err), "error");
+  }
+  openRefreshBtn.disabled = false;
+}
+
+async function openStaleTab(event) {
+  event.preventDefault();
+  try {
+    await openLocalUrl(STALE_TAB_URL);
+    setStatus("Opened Stale tab", "ok");
+  } catch (err) {
+    setStatus(shortError(err.message || err), "error");
   }
 }
 
@@ -65,6 +135,7 @@ async function runSync() {
     "ok"
   );
   syncBtn.disabled = false;
+  await loadStaleSummary();
 }
 
 async function startRecord() {
@@ -109,6 +180,9 @@ async function saveRecord() {
 }
 
 showVersion();
+loadStaleSummary();
+openRefreshBtn.addEventListener("click", openRefresh);
+openStaleLink.addEventListener("click", openStaleTab);
 syncBtn.addEventListener("click", runSync);
 recordBtn.addEventListener("click", startRecord);
 saveRecordBtn.addEventListener("click", saveRecord);

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Depop Store Manager Sync",
-  "version": "0.7.2",
-  "description": "Sync Selling Hub + record one Depop Post (write capture test). No auto-post.",
+  "version": "0.7.3",
+  "description": "Sync Selling Hub, show stale count, open Refresh. Record Post is a capture test — no auto-post.",
   "action": {
     "default_popup": "popup.html",
     "default_title": "Depop Store Manager Sync"
